@@ -1,0 +1,50 @@
+<configuration>
+<!--    변수 설정-->
+    <property name="LOGS_PATHS" value="./logs"/>
+    <property name="LOGS_LEVEL" value="INFO"/>
+
+<!--    콘솔 출력-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+<!--    파일 출력-->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_PATHS}/logback.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_PATHS}/%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>10MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+<!--    에러 파일 출력따로 설정-->
+    <appender name="Error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_PATHS}/error.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_PATHS}/%d{yyyy-MM-dd}_error.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>10MB</totalSizeCap>
+        </rollingPolicy>
+<!--        error이상의 로그만 걸러지도록 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+
+
+  <root level="${LOGS_LEVEL}">
+      <appender-ref ref="STDOUT"/>
+      <appender-ref ref="FILE"/>
+      <appender-ref ref="Error"/>
+  </root>
+</configuration>

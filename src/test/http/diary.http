@@ -1,0 +1,9 @@
+GET {{host}}/read/diaries?startDate=2020-05-20&endDate=2020-05-21
+Accept: application/json
+
+###
+GET {{host}}/read/diary?date=2020-05-20
+Accept: application/json
+
+###
+POST {{host}}/create/diary?date=2020-05-20&text=hello
