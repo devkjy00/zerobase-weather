@@ -22,7 +22,7 @@ import lombok.Setter;
 public class Diary {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
     private String weather;
     private String icon;

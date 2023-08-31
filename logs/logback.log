@@ -1,98 +1,708 @@
-2023-08-28 17:04:36.824 [main] ERROR o.s.boot.SpringApplication - Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - 'FileNamePattern' option has the same value "application.log.%d{yyyy-MM-dd}.gz" as that given for appender [FILE] defined earlier.
-ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
-ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - For more information, please visit http://logback.qos.ch/codes.html#earlier_fa_collision
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+2023-08-31 18:43:54.085 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 68012 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
+2023-08-31 18:43:54.100 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
+2023-08-31 18:43:55.106 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-31 18:43:55.154 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+2023-08-31 18:43:55.756 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-08-31 18:43:55.766 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:43:55.767 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-31 18:43:55.767 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-08-31 18:43:55.877 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-31 18:43:55.879 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1694 ms
+2023-08-31 18:43:55.931 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-31 18:43:56.000 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-31 18:43:56.023 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2023-08-31 18:43:56.138 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-31 18:43:56.160 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-08-31 18:43:56.247 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-31 18:43:56.296 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-08-31 18:43:56.578 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-31 18:43:56.583 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:43:57.284 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-31 18:43:57.685 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:43:57.700 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-31 18:43:57.873 [main] INFO  zerobase.demo.WeatherApplication - Started WeatherApplication in 4.378 seconds (JVM running for 5.162)
+2023-08-31 18:44:14.124 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:44:14.127 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-08-31 18:44:14.311 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-08-31 18:44:14.318 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-08-31 18:50:55.108 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 69931 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
+2023-08-31 18:50:55.111 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
+2023-08-31 18:50:56.290 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-31 18:50:56.352 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
+2023-08-31 18:50:57.147 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-08-31 18:50:57.157 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:50:57.158 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-31 18:50:57.158 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-08-31 18:50:57.285 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-31 18:50:57.286 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2093 ms
+2023-08-31 18:50:57.487 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-31 18:50:57.519 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-08-31 18:50:57.618 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-31 18:50:57.675 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-31 18:50:58.160 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-31 18:50:58.170 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-08-31 18:50:58.175 [main] WARN  org.hibernate.dialect.H2Dialect - HHH000431: Unable to determine H2 database version, certain features may not work
+2023-08-31 18:50:58.800 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:50:58.800 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.date_weather'
+2023-08-31 18:50:59.327 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:50:59.328 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.diary'
+2023-08-31 18:51:03.500 [main] WARN  o.h.t.s.i.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table diary (
+       id bigint generated by default as identity,
+        date date,
+        icon varchar(255),
+        temperature double not null,
+        text varchar(255),
+        weather varchar(255),
+        primary key (id)
+    )" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table diary (
+       id bigint generated by default as identity,
+        date date,
+        icon varchar(255),
+        temperature double not null,
+        text varchar(255),
+        weather varchar(255),
+        primary key (id)
+    )" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:325)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
 	at zerobase.demo.WeatherApplication.main(WeatherApplication.java:14)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - 'FileNamePattern' option has the same value "application.log.%d{yyyy-MM-dd}.gz" as that given for appender [FILE] defined earlier.
-ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
-ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - For more information, please visit http://logback.qos.ch/codes.html#earlier_fa_collision
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
-	... 18 common frames omitted
-2023-08-28 17:08:25.427 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 68509 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
-2023-08-28 17:08:25.436 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
-2023-08-28 17:08:26.168 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-08-28 17:08:26.218 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
-2023-08-28 17:08:26.691 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2023-08-28 17:08:26.735 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2023-08-28 17:08:26.737 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2023-08-28 17:08:26.737 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-08-28 17:08:26.857 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2023-08-28 17:08:26.857 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1367 ms
-2023-08-28 17:08:26.909 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2023-08-28 17:08:26.981 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2023-08-28 17:08:27.006 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
-2023-08-28 17:08:27.131 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-08-28 17:08:27.163 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-08-28 17:08:27.263 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-08-28 17:08:27.312 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-08-28 17:08:27.612 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-08-28 17:08:27.617 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-08-28 17:08:28.067 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-08-28 17:08:28.352 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2023-08-28 17:08:28.366 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2023-08-28 17:08:28.381 [main] INFO  zerobase.demo.WeatherApplication - Started WeatherApplication in 3.555 seconds (JVM running for 4.266)
-2023-08-28 17:08:44.542 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-08-28 17:08:44.545 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2023-08-28 17:08:44.731 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2023-08-28 17:08:44.738 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2023-08-28 18:12:10.751 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 83795 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
-2023-08-28 18:12:10.753 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
-2023-08-28 18:12:12.152 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-08-28 18:12:12.264 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 104 ms. Found 2 JPA repository interfaces.
-2023-08-28 18:12:12.894 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2023-08-28 18:12:12.902 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2023-08-28 18:12:12.903 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2023-08-28 18:12:12.903 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-08-28 18:12:12.997 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2023-08-28 18:12:12.997 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2159 ms
-2023-08-28 18:12:13.050 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2023-08-28 18:12:13.122 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2023-08-28 18:12:13.143 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
-2023-08-28 18:12:13.262 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-08-28 18:12:13.289 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-08-28 18:12:13.381 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-08-28 18:12:13.434 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-08-28 18:12:13.783 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-08-28 18:12:13.787 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-08-28 18:12:14.375 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-08-28 18:12:14.858 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2023-08-28 18:12:14.875 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2023-08-28 18:12:15.128 [main] INFO  zerobase.demo.WeatherApplication - Started WeatherApplication in 4.96 seconds (JVM running for 5.947)
-2023-08-28 18:12:21.854 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-08-28 18:12:21.855 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2023-08-28 18:12:21.857 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2023-08-28 18:13:16.516 [http-nio-8080-exec-3] INFO  zerobase.demo.WeatherApplication - createDiary
-2023-08-28 18:13:16.588 [http-nio-8080-exec-3] INFO  zerobase.demo.WeatherApplication - getDateWeather from API
-2023-08-28 18:14:55.516 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-08-28 18:14:55.518 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2023-08-28 18:14:55.523 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 90121, SQLState: 90121
-2023-08-28 18:14:55.523 [SpringApplicationShutdownHook] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
-2023-08-28 18:14:55.527 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 90121, SQLState: 90121
-2023-08-28 18:14:55.527 [SpringApplicationShutdownHook] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
-2023-08-28 18:14:55.527 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
-2023-08-28 18:14:55.528 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2023-08-28 18:14:55.536 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by default as identity,
+        date date,
+        icon varchar(255),
+        te' at line 2
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 34 common frames omitted
+2023-08-31 18:51:03.503 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-31 18:51:03.510 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:51:04.254 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 69977 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
+2023-08-31 18:51:04.256 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
+2023-08-31 18:51:04.392 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-31 18:51:04.910 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:51:04.934 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-31 18:51:05.140 [main] INFO  zerobase.demo.WeatherApplication - Started WeatherApplication in 10.897 seconds (JVM running for 12.135)
+2023-08-31 18:51:05.451 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-31 18:51:05.505 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2023-08-31 18:51:06.396 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-08-31 18:51:06.405 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:51:06.406 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-31 18:51:06.406 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-08-31 18:51:06.519 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-31 18:51:06.519 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2194 ms
+2023-08-31 18:51:06.737 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-31 18:51:06.757 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-08-31 18:51:06.823 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-31 18:51:06.882 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-31 18:51:07.196 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-31 18:51:07.204 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-08-31 18:51:07.207 [main] WARN  org.hibernate.dialect.H2Dialect - HHH000431: Unable to determine H2 database version, certain features may not work
+2023-08-31 18:51:10.356 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:51:10.357 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.diary'
+2023-08-31 18:51:12.376 [main] WARN  o.h.t.s.i.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table diary (
+       id bigint generated by default as identity,
+        date date,
+        icon varchar(255),
+        temperature double not null,
+        text varchar(255),
+        weather varchar(255),
+        primary key (id)
+    )" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table diary (
+       id bigint generated by default as identity,
+        date date,
+        icon varchar(255),
+        temperature double not null,
+        text varchar(255),
+        weather varchar(255),
+        primary key (id)
+    )" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:325)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at zerobase.demo.WeatherApplication.main(WeatherApplication.java:14)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by default as identity,
+        date date,
+        icon varchar(255),
+        te' at line 2
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 34 common frames omitted
+2023-08-31 18:51:12.383 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-31 18:51:12.400 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:51:13.124 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-31 18:51:13.527 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:51:13.535 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2023-08-31 18:51:13.538 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:51:13.539 [main] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-08-31 18:51:16.076 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:51:16.077 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.diary'
+2023-08-31 18:51:16.095 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-08-31 18:51:16.167 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-08-31 18:51:16.176 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:51:16.176 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-08-31 18:51:16.187 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:51:16.188 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:51:16.200 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-31 18:51:16.215 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-08-31 18:51:30.583 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:51:30.586 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-08-31 18:51:30.686 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:51:30.686 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.date_weather'
+2023-08-31 18:51:31.155 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:51:31.156 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.diary'
+2023-08-31 18:51:31.164 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-08-31 18:51:31.227 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-08-31 18:51:37.510 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 70129 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
+2023-08-31 18:51:37.514 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
+2023-08-31 18:51:38.436 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-31 18:51:38.485 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2023-08-31 18:51:39.076 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-08-31 18:51:39.084 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:51:39.085 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-31 18:51:39.085 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-08-31 18:51:39.183 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-31 18:51:39.183 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1612 ms
+2023-08-31 18:51:39.349 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-31 18:51:39.369 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-08-31 18:51:39.432 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-31 18:51:39.469 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-31 18:51:39.935 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-31 18:51:39.942 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-08-31 18:51:39.945 [main] WARN  org.hibernate.dialect.H2Dialect - HHH000431: Unable to determine H2 database version, certain features may not work
+2023-08-31 18:51:40.417 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:51:40.418 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.date_weather'
+2023-08-31 18:51:40.958 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:51:40.960 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.diary'
+2023-08-31 18:51:44.841 [main] WARN  o.h.t.s.i.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table diary (
+       id bigint generated by default as identity,
+        date date,
+        icon varchar(255),
+        temperature double not null,
+        text varchar(255),
+        weather varchar(255),
+        primary key (id)
+    )" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table diary (
+       id bigint generated by default as identity,
+        date date,
+        icon varchar(255),
+        temperature double not null,
+        text varchar(255),
+        weather varchar(255),
+        primary key (id)
+    )" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:325)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at zerobase.demo.WeatherApplication.main(WeatherApplication.java:14)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by default as identity,
+        date date,
+        icon varchar(255),
+        te' at line 2
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 34 common frames omitted
+2023-08-31 18:51:44.845 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-31 18:51:44.852 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:51:45.572 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-31 18:51:45.939 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:51:45.955 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-31 18:51:46.106 [main] INFO  zerobase.demo.WeatherApplication - Started WeatherApplication in 9.161 seconds (JVM running for 9.91)
+2023-08-31 18:52:23.260 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:52:23.262 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-08-31 18:52:24.449 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:52:24.449 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.diary'
+2023-08-31 18:52:24.459 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-08-31 18:52:24.523 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-08-31 18:52:27.979 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 70366 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
+2023-08-31 18:52:27.983 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
+2023-08-31 18:52:28.980 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-31 18:52:29.025 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 2 JPA repository interfaces.
+2023-08-31 18:52:29.619 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-08-31 18:52:29.627 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:52:29.628 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-31 18:52:29.628 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-08-31 18:52:29.732 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-31 18:52:29.732 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1681 ms
+2023-08-31 18:52:29.903 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-31 18:52:29.923 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-08-31 18:52:29.994 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-31 18:52:30.033 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-31 18:52:30.312 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-31 18:52:30.320 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-08-31 18:52:30.323 [main] WARN  org.hibernate.dialect.H2Dialect - HHH000431: Unable to determine H2 database version, certain features may not work
+2023-08-31 18:52:31.033 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:52:31.033 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.date_weather'
+2023-08-31 18:52:31.134 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:52:31.136 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.diary'
+2023-08-31 18:52:34.424 [main] WARN  o.h.t.s.i.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table diary (
+       id bigint generated by default as identity,
+        date date,
+        icon varchar(255),
+        temperature double not null,
+        text varchar(255),
+        weather varchar(255),
+        primary key (id)
+    )" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table diary (
+       id bigint generated by default as identity,
+        date date,
+        icon varchar(255),
+        temperature double not null,
+        text varchar(255),
+        weather varchar(255),
+        primary key (id)
+    )" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:325)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at zerobase.demo.WeatherApplication.main(WeatherApplication.java:14)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by default as identity,
+        date date,
+        icon varchar(255),
+        te' at line 2
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 34 common frames omitted
+2023-08-31 18:52:34.429 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-31 18:52:34.438 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:52:35.135 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-31 18:52:35.544 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:52:35.561 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-31 18:52:35.731 [main] INFO  zerobase.demo.WeatherApplication - Started WeatherApplication in 8.262 seconds (JVM running for 8.912)
+2023-08-31 18:53:01.806 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:53:01.809 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-08-31 18:53:05.090 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:53:05.091 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.diary'
+2023-08-31 18:53:05.094 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-08-31 18:53:05.150 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-08-31 18:53:31.890 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 70683 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
+2023-08-31 18:53:31.893 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
+2023-08-31 18:53:32.857 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-31 18:53:32.905 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
+2023-08-31 18:53:33.485 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-08-31 18:53:33.493 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:53:33.494 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-31 18:53:33.494 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-08-31 18:53:33.604 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-31 18:53:33.604 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1629 ms
+2023-08-31 18:53:33.778 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-31 18:53:33.799 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-08-31 18:53:33.864 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-31 18:53:33.903 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-31 18:53:34.218 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-31 18:53:34.227 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-08-31 18:53:34.231 [main] WARN  org.hibernate.dialect.H2Dialect - HHH000431: Unable to determine H2 database version, certain features may not work
+2023-08-31 18:53:34.682 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:53:34.683 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.date_weather'
+2023-08-31 18:53:35.261 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:53:35.266 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.diary'
+2023-08-31 18:53:39.890 [main] WARN  o.h.t.s.i.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table diary (
+       id bigint generated by default as identity,
+        date date,
+        icon varchar(255),
+        temperature double not null,
+        text varchar(255),
+        weather varchar(255),
+        primary key (id)
+    )" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table diary (
+       id bigint generated by default as identity,
+        date date,
+        icon varchar(255),
+        temperature double not null,
+        text varchar(255),
+        weather varchar(255),
+        primary key (id)
+    )" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:325)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at zerobase.demo.WeatherApplication.main(WeatherApplication.java:14)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by default as identity,
+        date date,
+        icon varchar(255),
+        te' at line 2
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 34 common frames omitted
+2023-08-31 18:53:39.894 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-31 18:53:39.903 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:53:40.565 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-31 18:53:40.947 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:53:40.963 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-31 18:53:41.124 [main] INFO  zerobase.demo.WeatherApplication - Started WeatherApplication in 9.795 seconds (JVM running for 10.466)
+2023-08-31 18:54:45.520 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:54:45.522 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-08-31 18:54:51.662 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 71022 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
+2023-08-31 18:54:51.664 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
+2023-08-31 18:54:52.580 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-31 18:54:52.629 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 2 JPA repository interfaces.
+2023-08-31 18:54:53.245 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-08-31 18:54:53.252 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:54:53.253 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-31 18:54:53.253 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-08-31 18:54:53.372 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-31 18:54:53.372 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1659 ms
+2023-08-31 18:54:53.545 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-31 18:54:53.566 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-08-31 18:54:53.631 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-31 18:54:53.672 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-31 18:54:53.965 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-31 18:54:53.974 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-08-31 18:54:53.977 [main] WARN  org.hibernate.dialect.H2Dialect - HHH000431: Unable to determine H2 database version, certain features may not work
+2023-08-31 18:54:54.473 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:54:54.474 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.date_weather'
+2023-08-31 18:54:55.133 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 1051, SQLState: 42S02
+2023-08-31 18:54:55.137 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - Unknown table 'test.diary'
+2023-08-31 18:54:55.159 [main] WARN  o.h.t.s.i.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+    drop sequence if exists hibernate_sequence" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    drop sequence if exists hibernate_sequence" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:256)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:157)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at zerobase.demo.WeatherApplication.main(WeatherApplication.java:14)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sequence if exists hibernate_sequence' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 34 common frames omitted
+2023-08-31 18:54:55.173 [main] WARN  o.h.t.s.i.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "create sequence hibernate_sequence start with 1 increment by 1" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create sequence hibernate_sequence start with 1 increment by 1" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:299)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at zerobase.demo.WeatherApplication.main(WeatherApplication.java:14)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sequence hibernate_sequence start with 1 increment by 1' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 34 common frames omitted
+2023-08-31 18:55:02.120 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-31 18:55:02.130 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 18:55:02.797 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-31 18:55:03.201 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-08-31 18:55:03.222 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-31 18:55:03.431 [main] INFO  zerobase.demo.WeatherApplication - Started WeatherApplication in 12.455 seconds (JVM running for 13.129)
+2023-08-31 18:56:53.568 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-31 18:56:53.570 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-31 18:56:53.572 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-08-31 18:56:53.652 [http-nio-8080-exec-1] INFO  zerobase.demo.WeatherApplication - createDiary
+2023-08-31 18:56:53.742 [http-nio-8080-exec-1] INFO  zerobase.demo.WeatherApplication - getDateWeather from API
+2023-08-31 18:56:55.015 [http-nio-8080-exec-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1064, SQLState: 42000
+2023-08-31 18:56:55.015 [http-nio-8080-exec-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'value for hibernate_sequence' at line 1
+2023-08-31 18:57:19.350 [http-nio-8080-exec-2] INFO  zerobase.demo.WeatherApplication - createDiary
+2023-08-31 18:57:19.360 [http-nio-8080-exec-2] INFO  zerobase.demo.WeatherApplication - getDateWeather from API
+2023-08-31 18:57:19.986 [http-nio-8080-exec-2] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1064, SQLState: 42000
+2023-08-31 18:57:19.986 [http-nio-8080-exec-2] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'value for hibernate_sequence' at line 1
+2023-08-31 19:01:48.470 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 19:01:48.473 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-08-31 19:01:53.242 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 72905 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
+2023-08-31 19:01:53.244 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
+2023-08-31 19:01:54.175 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-31 19:01:54.224 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 2 JPA repository interfaces.
+2023-08-31 19:01:54.857 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-08-31 19:01:54.864 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-08-31 19:01:54.865 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-31 19:01:54.865 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-08-31 19:01:54.959 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-31 19:01:54.960 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1667 ms
+2023-08-31 19:01:55.124 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-31 19:01:55.143 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-08-31 19:01:55.209 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-31 19:01:55.251 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-31 19:01:55.782 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-31 19:01:55.794 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-08-31 19:02:08.084 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-31 19:02:08.090 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 19:02:08.764 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-31 19:02:09.164 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-08-31 19:02:09.180 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-31 19:02:09.347 [main] INFO  zerobase.demo.WeatherApplication - Started WeatherApplication in 16.695 seconds (JVM running for 17.391)
+2023-08-31 19:02:22.855 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-31 19:02:22.857 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-31 19:02:22.858 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-08-31 19:02:22.944 [http-nio-8080-exec-1] INFO  zerobase.demo.WeatherApplication - createDiary
+2023-08-31 19:02:23.031 [http-nio-8080-exec-1] INFO  zerobase.demo.WeatherApplication - getDateWeather from API
+2023-08-31 19:02:44.778 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-31 19:02:44.780 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-08-31 19:02:51.198 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-08-31 19:02:51.250 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

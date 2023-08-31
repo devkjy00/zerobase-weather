@@ -27,7 +27,6 @@ import zerobase.demo.repository.DateWeatherRepository;
 import zerobase.demo.repository.DiaryRepository;
 
 @Service
-@Transactional(readOnly = true)
 public class DiaryService {
 
     @Value("${open_weather_map.key}")
@@ -62,6 +61,7 @@ public class DiaryService {
         diaryRepository.save(nowDiary);
     }
 
+    @Transactional(readOnly = true)
     private DateWeather getDateWeather(LocalDate date) {
         List<DateWeather> dateWeathersFromDB = dateWeatherRepository.findAllByDate(date);
 
@@ -73,7 +73,7 @@ public class DiaryService {
     }
 
     @Transactional
-    @Scheduled(cron = "0/5 * * * * *")
+    @Scheduled(cron = "0 0 1 * * *")
     public void saveWeatherDate(){
         dateWeatherRepository.save(getWeatherFromApi());
     }
@@ -140,14 +140,12 @@ public class DiaryService {
         return resultMap;
     }
 
+    @Transactional(readOnly = true)
     public List<Diary> readDiary(LocalDate date) {
-//        if (date.isAfter(LocalDate.ofYearDay(3050, 1))){
-//            throw new InvalidDate();
-//        }
-
         return diaryRepository.findAllByDate(date);
     }
 
+    @Transactional(readOnly = true)
     public List<Diary> readDiaries(LocalDate startDate, LocalDate endDate) {
         return diaryRepository.findAllByDateBetween(startDate, endDate);
     }

@@ -1,0 +1,98 @@
+2023-08-28 17:04:36.824 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - 'FileNamePattern' option has the same value "application.log.%d{yyyy-MM-dd}.gz" as that given for appender [FILE] defined earlier.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - For more information, please visit http://logback.qos.ch/codes.html#earlier_fa_collision
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at zerobase.demo.WeatherApplication.main(WeatherApplication.java:14)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - 'FileNamePattern' option has the same value "application.log.%d{yyyy-MM-dd}.gz" as that given for appender [FILE] defined earlier.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[Error] - For more information, please visit http://logback.qos.ch/codes.html#earlier_fa_collision
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 18 common frames omitted
+2023-08-28 17:08:25.427 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 68509 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
+2023-08-28 17:08:25.436 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
+2023-08-28 17:08:26.168 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-28 17:08:26.218 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2023-08-28 17:08:26.691 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-08-28 17:08:26.735 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-08-28 17:08:26.737 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-28 17:08:26.737 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-08-28 17:08:26.857 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-28 17:08:26.857 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1367 ms
+2023-08-28 17:08:26.909 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-28 17:08:26.981 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-28 17:08:27.006 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2023-08-28 17:08:27.131 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-28 17:08:27.163 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-08-28 17:08:27.263 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-28 17:08:27.312 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-08-28 17:08:27.612 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-28 17:08:27.617 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-28 17:08:28.067 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-28 17:08:28.352 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-08-28 17:08:28.366 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-28 17:08:28.381 [main] INFO  zerobase.demo.WeatherApplication - Started WeatherApplication in 3.555 seconds (JVM running for 4.266)
+2023-08-28 17:08:44.542 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-28 17:08:44.545 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-08-28 17:08:44.731 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-08-28 17:08:44.738 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-08-28 18:12:10.751 [main] INFO  zerobase.demo.WeatherApplication - Starting WeatherApplication using Java 11.0.11 on MacBook-Pro.local with PID 83795 (/Users/jy_air/Mydir/zerobase/zerobase-weather/build/classes/java/main started by jy_air in /Users/jy_air/Mydir/zerobase/zerobase-weather)
+2023-08-28 18:12:10.753 [main] INFO  zerobase.demo.WeatherApplication - No active profile set, falling back to 1 default profile: "default"
+2023-08-28 18:12:12.152 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-28 18:12:12.264 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 104 ms. Found 2 JPA repository interfaces.
+2023-08-28 18:12:12.894 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-08-28 18:12:12.902 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-08-28 18:12:12.903 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-08-28 18:12:12.903 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-08-28 18:12:12.997 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-08-28 18:12:12.997 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2159 ms
+2023-08-28 18:12:13.050 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-08-28 18:12:13.122 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-08-28 18:12:13.143 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2023-08-28 18:12:13.262 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-28 18:12:13.289 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-08-28 18:12:13.381 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-28 18:12:13.434 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-08-28 18:12:13.783 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-28 18:12:13.787 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-28 18:12:14.375 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-08-28 18:12:14.858 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-08-28 18:12:14.875 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-28 18:12:15.128 [main] INFO  zerobase.demo.WeatherApplication - Started WeatherApplication in 4.96 seconds (JVM running for 5.947)
+2023-08-28 18:12:21.854 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-28 18:12:21.855 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-08-28 18:12:21.857 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-08-28 18:13:16.516 [http-nio-8080-exec-3] INFO  zerobase.demo.WeatherApplication - createDiary
+2023-08-28 18:13:16.588 [http-nio-8080-exec-3] INFO  zerobase.demo.WeatherApplication - getDateWeather from API
+2023-08-28 18:14:55.516 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-28 18:14:55.518 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-08-28 18:14:55.523 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 90121, SQLState: 90121
+2023-08-28 18:14:55.523 [SpringApplicationShutdownHook] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-08-28 18:14:55.527 [SpringApplicationShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 90121, SQLState: 90121
+2023-08-28 18:14:55.527 [SpringApplicationShutdownHook] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-08-28 18:14:55.527 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2023-08-28 18:14:55.528 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-08-28 18:14:55.536 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
